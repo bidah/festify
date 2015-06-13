@@ -3,7 +3,6 @@
   <%= f.text_field :name %>
   <%= f.label 'ticket link' %>
   <%= f.text_field :ticket_link %>
-  <%= f.label 'admin id' %>
-  <%= f.text_field :admin_id %>
+  <%= f.hidden_field :admin_id, :value => current_admin.id %>
   <%= f.submit %>
 <% end %>

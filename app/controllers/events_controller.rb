@@ -1,9 +1,7 @@
 class EventsController < ApplicationController
-  def show
-    @event = Event.find(params[:id])
-  end
 
   def new
+    console
     @event = Event.new
   end
 
@@ -14,6 +12,10 @@ class EventsController < ApplicationController
     else
       render :new
     end
+  end
+  
+  def show
+    @event = Event.find(params[:id])
   end
 
   def edit
