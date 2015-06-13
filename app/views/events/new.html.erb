@@ -1,8 +1,16 @@
 <%= form_for @event do |f| %>
-  <%= f.label 'nombre evento' %>
+  <br><%= f.label 'nombre evento' %>
   <%= f.text_field :name %>
-  <%= f.label 'ticket link' %>
+
+  <br><%= f.label 'descripcion evento' %>
+  <%= f.text_field :description %>
+
+  <br><%= f.label 'artistas que van a evento' %>
+  <%= f.text_field :artists %>
+
+  <br><%= f.label 'ticket link' %>
   <%= f.text_field :ticket_link %>
-  <%= f.hidden_field :admin_id, :value => current_admin.id %>
+
+  <br><%= f.hidden_field :admin_id, :value => current_admin.id %>
   <%= f.submit %>
 <% end %>

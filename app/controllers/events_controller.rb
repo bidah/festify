@@ -8,7 +8,7 @@ class EventsController < ApplicationController
   def create
     @event = Event.create(event_params)
     if @event.save
-      redirect_to root_url
+      redirect_to admin_index_path
     else
       render :new
     end
@@ -29,6 +29,6 @@ class EventsController < ApplicationController
 
   private
   def event_params
-    params.require(:event).permit(:name, :ticket_link, :admin_id)
+    params.require(:event).permit(:name, :description, :artists, :ticket_link, :admin_id)
   end
 end
