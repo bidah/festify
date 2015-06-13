@@ -1,15 +1,24 @@
 
 <h1>Index de Productor Evento</h1>
-<p>este es el index del productor evento</p>
-
+<!-- <p>Crea y organiza tus eventos.</p>
+ -->
 <%#= link_to 'Crear Pagina de Evento', new_admin_path %>
-<%= link_to 'Crear Pagina de Evento', new_event_path %>
 
+
+<div class="row">
+<div class="col-md-12" style="text-align:center;">
+<%= link_to 'Crear Pagina de Evento', new_event_path, class: 'btn btn-large btn-primary' %>
+</div>
+</div>
+
+<h2 style="text-align: left"> Mis eventos </h2>
 <ul>
-<% @my_events.each do |event| %>
-  <li>
-    <%= link_to event.name, event %>
-  </li>
+<% if @my_events != nil %>
+  <% @my_events.each do |event| %>
+    <li>
+      <%= link_to event.name, event %>
+    </li>
+  <% end %>
 <% end %>
 </ul>
 
