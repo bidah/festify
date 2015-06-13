@@ -1,5 +1,16 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "font-awesome";
+
+
+/* icon fa */
+i {
+    margin-left: 10px;
+    font-size: 30px;
+    height: 30px;
+    vertical-align: middle;
+    color: #FFAC0D;
+}
 
 /*	mixins,	variables,	etc.	*/
 $gray-medium-light:	#eaeaea;
