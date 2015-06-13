@@ -15,7 +15,9 @@ class EventsController < ApplicationController
   end
   
   def show
+    console
     @event = Event.find(params[:id])
+    @event_artists = @event.artists.split(",").map(&:lstrip)
   end
 
   def edit
