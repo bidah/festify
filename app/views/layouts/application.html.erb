@@ -1,5 +1,6 @@
 <!DOCTYPE	html>
 <html>
+<<<<<<< HEAD
 		<head>
 				<title>Festify</title>
 				<%=	stylesheet_link_tag	'application',	media:	'all', 'data-turbolinks-track'	=>	true	%>
@@ -15,3 +16,18 @@
 				</div>
 		</body>
 </html>
+=======
+<head>
+  <title>Festify</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+<%= yield %>
+
+</body>
+</html>
+>>>>>>> 12fc1adcbfeee763d1ec9b7d9554dde487c2a9bd

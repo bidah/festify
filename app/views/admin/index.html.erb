@@ -1,0 +1,15 @@
+
+<h1>Index de Productor Evento</h1>
+<p>este es el index del productor evento</p>
+
+<%#= link_to 'Crear Pagina de Evento', new_admin_path %>
+<%= link_to 'Crear Pagina de Evento', new_event_path %>
+
+<ul>
+<% @my_events.each do |event| %>
+  <li>
+    <%= link_to event.name, event %>
+  </li>
+<% end %>
+</ul>
+
