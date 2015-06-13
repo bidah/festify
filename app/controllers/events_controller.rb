@@ -17,7 +17,7 @@ class EventsController < ApplicationController
   def show
     #console
     @event = Event.find(params[:id])
-    @event_artists = @event.artists
+    @event_artists = @event.artists.split(',')
   end
 
   def edit

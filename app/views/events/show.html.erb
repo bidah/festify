@@ -19,8 +19,11 @@
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" data-nombre="<%= @event.artists %>" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="0" data-nombre="Chancho en piedra"></li>
+    <li data-target="#myCarousel" data-slide-to="0" data-nombre="Chancho en piedra" class="active"></li>
+    <% @event_artists.each do | ar | %>
+      <li data-target="#myCarousel" data-slide-to="0" data-nombre="<%= ar %>" ></li>
+      
+    <% end %>
     </ol>
 
     <!-- Wrapper for slides -->
@@ -54,7 +57,7 @@
   <!-- Tab panes -->
   <div class="tab-content">
     <div role="tabpanel" class="tab-pane active" id="home">
-    	detalle del evento
+    	<%=  @event.description %>
     </div>
     <div role="tabpanel" class="tab-pane" id="profile">Lista de los artistas</div>
     <div role="tabpanel" class="tab-pane" id="messages">
