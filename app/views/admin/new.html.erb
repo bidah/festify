@@ -9,3 +9,17 @@
   <li>link para comprar entradas</li>
 </ul>
 
+
+<%#= form_for @event, url: {action: "create"} do |f| %>
+
+
+<%= form_for @event, :url => url_for(:controller => 'events', :action => 'create') do |f| %>
+
+  <%= f.label 'nombre evento' %>
+  <%= f.text_field :name %>
+  <%= f.label 'ticket link' %>
+  <%= f.text_field :ticket_link %>
+  <%= f.label 'admin id' %>
+  <%= f.text_field :admin_id %>
+  <%= f.submit %>
+<% end %>
