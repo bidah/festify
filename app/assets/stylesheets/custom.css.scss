@@ -74,12 +74,11 @@ p	{
 /*	header	*/
 #logo	{
 		float:	left;
-		margin-right:	10px;
+		margin-left:	10px;
 		font-size:	1.7em;
 		color:	white;
 		text-transform:	uppercase;
 		letter-spacing:	-1px;
-		padding-top:	9px;
 		font-weight:	bold;
 		&:hover	{
 				color:	white;
@@ -109,4 +108,14 @@ footer	{
 						margin-left:	15px;
 				}
 		}
+}
+
+header.navbar.navbar-fixed-top.navbar-inverse {
+  border-bottom: 10px solid #F5A623;
+  }
+
+
+  .navbar-right {
+  float: right !important;
+  margin-right: 0px !important; 
 }
