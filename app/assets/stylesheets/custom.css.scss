@@ -2,6 +2,10 @@
 @import "bootstrap";
 @import "font-awesome";
 
+/*	mixins,	variables,	etc.	*/
+$gray-medium-light:	#EAEAEA;
+$white: #FFFFFF;
+$festify: #FFAC0D;
 
 /* icon fa */
 i {
@@ -12,9 +16,6 @@ i {
     color: #FFAC0D;
 }
 
-/*	mixins,	variables,	etc.	*/
-$gray-medium-light:	#eaeaea;
-$white: #ffffff;
 /*	universal	*/
 body	{
 		padding-top:	60px;
@@ -58,6 +59,18 @@ p	{
 		font-size:	1.1em;
 		line-height:	1.7em;
 }
+.strokeme
+{
+    color: white;
+    text-shadow:
+    -1.1px -1.1px 0 #000,
+    1.1px -1.1px 0 #000,
+    -1.1px 1.1px 0 #000,
+    1.1px 1.1px 0 #000;  
+}
+
+
+
 /*	header	*/
 #logo	{
 		float:	left;
@@ -80,7 +93,7 @@ footer	{
 		border-top:	1px	solid	$gray-medium-light;
 		color:	$white;
 		a	{
-				color:	$gray-light;
+				color:	$festify;
 				&:hover	{
 						color:	$gray-medium-light;
 				}
