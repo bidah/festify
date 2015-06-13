@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150613205002) do
+ActiveRecord::Schema.define(version: 20150613230401) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -39,6 +39,9 @@ ActiveRecord::Schema.define(version: 20150613205002) do
     t.datetime "updated_at",  null: false
     t.string   "artists"
     t.text     "description"
+    t.string   "slug"
   end
+
+  add_index "events", ["slug"], name: "index_events_on_slug"
 
 end

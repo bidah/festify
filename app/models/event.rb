@@ -1,3 +1,4 @@
 class Event < ActiveRecord::Base
-  belongs_to :admin
+  extend FriendlyId
+  friendly_id :name, use: :slugged
 end
