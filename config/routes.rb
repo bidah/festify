@@ -9,6 +9,8 @@ Rails.application.routes.draw do
 
   get 'sessions/destroy'
 
+  get 'sessions' => 'sessions#index'
+
   root             'test#index'
   get 'about'   => 'test#about'
   get 'contact' => 'test#contact'
