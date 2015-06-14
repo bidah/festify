@@ -19,7 +19,11 @@ i {
 /*	universal	*/
 body	{
 		padding-top:	60px;
-		background-color: #000;
+		background: -webkit-linear-gradient(90deg, #000000 10%, #111111 90%); /* Chrome 10+, Saf5.1+ */
+  		background:    -moz-linear-gradient(90deg, #000000 10%, #111111 90%); /* FF3.6+ */
+  		background:     -ms-linear-gradient(90deg, #000000 10%, #111111 90%); /* IE10 */
+  		background:      -o-linear-gradient(90deg, #000000 10%, #111111 90%); /* Opera 11.10+ */
+  		background:         linear-gradient(90deg, #000000 10%, #111111 90%); /* W3C */ /*16222A-to-3A6073*/
 }
 section	{
 		overflow:	auto;
