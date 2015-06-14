@@ -9,31 +9,7 @@
 				<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
   <link rel="stylesheet" type="text/css" href="http://bootswatch.com/cyborg/bootstrap.min.css"> 
-			  <script type="text/javascript">
-
-   $(document).ready(function(){
-   //	var q="System of down";
-   	$("#myCarousel").find(" .carousel-indicators >li").each(function(index,el){ 
-   			var $el = $(el);
-   		if(index == 0)
-   			mostrarCaratula($(el).attr("data-nombre"),"active");
-   		else 
-   			mostrarCaratula($(el).attr("data-nombre"),""); 
-   	   	});
-   	
-   	 	 function mostrarCaratula(nombre,active){
-
-   	 	 	$.get('https://api.spotify.com/v1/search?q='+nombre+'&type=artist',function(data){
-     		var imagenes = data.artists.items[0].images;
-     		var html="";
-			html ='<div class="item '+active+'"><img src="'+imagenes[0].url+'" alt="'+nombre+'" width="460" height="345"   class="img-rounded"></div>'
-     		$("#myCarousel").find(".carousel-inner").append(html);
-     		 		});
-   	 	 }
-     
-   	  });
-     		 
-  </script>	
+			  
 		</head>
 		<body>
 		<div class="container">

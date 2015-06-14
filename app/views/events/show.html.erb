@@ -1,4 +1,28 @@
+<script type="text/javascript">
 
+   $(document).ready(function(){
+   // var q="System of down";
+    $("#myCarousel").find(" .carousel-indicators >li").each(function(index,el){ 
+        var $el = $(el);
+      if(index == 0)
+        mostrarCaratula($(el).attr("data-nombre"),"active");
+      else 
+        mostrarCaratula($(el).attr("data-nombre"),""); 
+        });
+    
+       function mostrarCaratula(nombre,active){
+
+        $.get('https://api.spotify.com/v1/search?q='+nombre+'&type=artist',function(data){
+        var imagenes = data.artists.items[0].images;
+        var html="";
+      html ='<div class="item '+active+'"><img src="'+imagenes[0].url+'" alt="'+nombre+'" width="460" height="345"   class="img-rounded"></div>'
+        $("#myCarousel").find(".carousel-inner").append(html);
+            });
+       }
+     
+      });
+         
+  </script> 
 
 
 <div class="row">
