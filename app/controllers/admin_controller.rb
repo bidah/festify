@@ -20,6 +20,16 @@ class AdminController < ApplicationController
 
   def destroy
   end
+  def consulta
+      @artists = RSpotify::Artist.search('System of down')
+      render json: @artists
+
+  end
+  def show
+      @artists = RSpotify::Artist.search('System of down')
+      render json: @artists
+
+  end
 
 
 end
