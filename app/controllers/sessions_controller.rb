@@ -30,7 +30,7 @@ class SessionsController < ApplicationController
   end
 
   def index
-    console
+    #console
     @events = Event.all
     @user_artists = session[:artists]
     # puts JSON.parse()session['user_artist']@user_artists

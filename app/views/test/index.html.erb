@@ -1,5 +1,23 @@
 
-
+<script type="text/javascript">
+  $(document).ready(function(){
+   // var q="System of down";
+    $(".event-list img").each(function(index,el){ 
+        mostrarCaratula(el); 
+        });
+    
+       function mostrarCaratula(el){
+        $el = (el);
+        var nombre =$(el).attr("data-nombre");
+        console.log(nombre);
+        $.get('https://api.spotify.com/v1/search?q='+nombre+'&type=artist',function(data){
+        var imagenes = data.artists.items[0].images;
+         $(el).attr('src',imagenes[0].url);
+       });
+      }
+     
+      });
+</script>
 
 <div class="row">
 <div class="col-md-12">
@@ -217,7 +235,7 @@
               <span class="year">2014</span>
               <span class="time">ALL DAY</span>
             </time>
-            <img alt="Independence Day" data-nombre="<%= event.artists.split(',').map(&:lstrip).to_s %>" />
+            <img alt="Independence Day" data-nombre="<%= event.artists.split(',').map(&:lstrip).first %>" />
             <div class="info">
               <h2 class="title"><%= event.name %></h2>
               <p class="desc"><%= event.description %></p>
