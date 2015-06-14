@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150613230401) do
+ActiveRecord::Schema.define(version: 20150614011141) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -43,5 +43,14 @@ ActiveRecord::Schema.define(version: 20150613230401) do
   end
 
   add_index "events", ["slug"], name: "index_events_on_slug"
+
+  create_table "users", force: :cascade do |t|
+    t.string   "name"
+    t.string   "provider"
+    t.string   "uid"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "scope"
+  end
 
 end
