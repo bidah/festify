@@ -34,10 +34,13 @@ class SessionsController < ApplicationController
     @events = Event.all
     @user_artists = session[:artists]
     # puts JSON.parse()session['user_artist']@user_artists
+    
     @events_artists = Event.all
     @events_to_go = []
     @events_artists.each do |event|
+
       @artists_from_events_that_match_user_fav_artists = @user_artists.select! do |user_artist|
+        
         if event.artists.split(',').map(&:lstrip).include? user_artist
           @events_to_go << event
         end
