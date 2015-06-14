@@ -4,8 +4,15 @@
 		<br>
 		<div class = "center">
 
-		<%=	link_to	"¡Loggea con Spotify!",	"#",	class:	"btn btn-lg btn-warning strokeme"	%>
-		<%=	link_to	"¡Promociona un evento!",	"#",	class:	"btn btn-lg btn-success strokeme"	%>
+
+
+    <% if logged_in? %>
+      <%#= link_to current_user.name, home_index_path %>
+      <%= link_to 'Log Out', logout_path, class:  "btn btn-lg btn-warning strokeme"  %>
+    <% else %>
+      <%= link_to "¡Loggea con Spotify!", login_path, class:  "btn btn-lg btn-warning strokeme"  %>
+      <%= link_to "¡Promociona un evento!", home_index_path,  class:  "btn btn-lg btn-success strokeme" %>
+    <% end %>
 		</div>
 </div>
 
