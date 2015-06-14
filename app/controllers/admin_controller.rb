@@ -21,15 +21,16 @@ class AdminController < ApplicationController
   def destroy
   end
   def consulta
+    console
       @artists = RSpotify::Artist.search('System of down')
       render json: @artists
 
   end
-  def show
-      @artists = RSpotify::Artist.search('System of down')
-      render json: @artists
+  #def show
+  #    @artists = RSpotify::Artist.search('System of down')
+  #    render json: @artists
 
-  end
+  #end
 
 
 end

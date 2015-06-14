@@ -25,6 +25,8 @@ Rails.application.routes.draw do
   get '/auth/spotify/callback' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
   get '/spotify/consulta' => 'admin#consulta'
+  get '/admin/consulta' => 'admin#consulta'
+
    
   #get 'home#index'
 
