@@ -12,11 +12,12 @@ class SessionsController < ApplicationController
   end
   def create
     @user = User.find_by_provider_and_uid(auth_hash[:provider], auth_hash[:uid]) || User.create_from_omniauth(auth_hash)
+    #return render json: @user
     if @user
        session[:user_id] = @user.id
-       redirect_to root_path
+       return redirect_to root_path
     else
-      redirect_to root_url
+      return redirect_to root_url
     end
   end
 
