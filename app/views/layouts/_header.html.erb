@@ -1,13 +1,12 @@
 <header	class="navbar	navbar-fixed-top	navbar-inverse">
 			<span id="logo">
 				<!-- <span style="color:#FFAC0D">FESTI</span>FY<i class="fa fa-spotify fa-lv"></i> -->
-				<%= image_tag 'logo_fondo_transparente_con_blanco.png', style: 'max-width:70%' %>
+				<%= link_to image_tag('logo_fondo_transparente_con_blanco.png', style: 'max-width:70%'),root_path %>
 			</span>
 
 			<nav>
-					<ul	class="nav	navbar-nav	navbar-right">
-							<li><%=	link_to	"Home",			root_path	%></li>
-							<li><%=	link_to	"Log	in",	"#"	%></li>
+					<ul	class="nav	navbar-nav	navbar-right logo">
+							<li><%=	link_to	"Login",	"home/index"	%></li>
 					</ul>
 			</nav>
 </header>

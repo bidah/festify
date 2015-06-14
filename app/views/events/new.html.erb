@@ -1,15 +1,11 @@
-<%= form_for @event do |f| %>
-  <br><%= f.label 'nombre evento' %>
-  <%= f.text_field :name %>
+<%= bootstrap_form_for(@event, layout: :horizontal, label_col: "col-sm-2", control_col: "col-sm-10") do |f| %>
+  <%= f.text_field :name, label: "Nombre del Evento:" %>
 
-  <br><%= f.label 'descripcion evento' %>
-  <%= f.text_field :description %>
+  <%= f.text_field :description, label: "Descripción evento:" %>
 
-  <br><%= f.label 'artistas que van a evento' %>
-  <%= f.text_field :artists %>
+  <%= f.text_field :artists, label: "Artistas que asistirán:", placeholder: "Grupo 1, Grupo 2" %>
 
-  <br><%= f.label 'ticket link' %>
-  <%= f.text_field :ticket_link %>
+  <%= f.text_field :ticket_link, label: "Link a compra del ticket:" %>
 
   <br><%= f.hidden_field :admin_id, :value => current_admin.id %>
   <%= f.submit %>
