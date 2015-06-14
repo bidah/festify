@@ -11,6 +11,6 @@ The app is build on top of Rails, and implemented the following gems.
 - [OmniAuth](https://github.com/intridea/omniauth)
 - [OmniAuth Spotify](https://github.com/icoretech/omniauth-spotify)
 
-By [Canas](https://github.com/Canas), [Waflesnet](https://github.com/waflessnet) and [rodrigofigueroa.name](https://github.com/waflessnet)
+By [Canas](https://github.com/Canas), [Waflesnet](https://github.com/waflessnet) and [rodrigofigueroa.name](https://github.com/bidah)
 
 
