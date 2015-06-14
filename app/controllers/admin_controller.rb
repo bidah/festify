@@ -21,7 +21,6 @@ class AdminController < ApplicationController
   def destroy
   end
   def consulta
-    console
       @artists = RSpotify::Artist.search('System of down')
       render json: @artists
 

@@ -12,9 +12,9 @@ class SessionsController < ApplicationController
   end
   def create
     @user = User.find_by_provider_and_uid(auth_hash[:provider], auth_hash[:uid]) || User.create_from_omniauth(auth_hash)
-    @spotify_user = RSpotify::User.new(request.env['omniauth.auth'])
-    @spotify_user.create_playlist!('my_awesome_playlist')
-    return render json: @spotify_user.saved_tracks()
+    #@spotify_user = RSpotify::User.new(request.env['omniauth.auth'])
+    #@spotify_user.create_playlist!('my_awesome_playlist')
+    #return render json: @spotify_user.saved_tracks()
     if @user
        session[:user_id] = @user.id
        return redirect_to root_path
