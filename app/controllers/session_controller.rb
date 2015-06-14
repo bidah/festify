@@ -4,7 +4,7 @@ class SessionController < ApplicationController
   end
 
   helper_method def current_user
-    @current_user ||= User.find(session[:user_id]) if session[:user_id] #memoized
+    @current_user ||= User.find(session[:user_id]) if session[:user_id] #memoized 
   end
 
   def new
@@ -14,7 +14,7 @@ class SessionController < ApplicationController
     @user = User.find_by_provider_and_uid(auth_hash[:provider], auth_hash[:uid]) || User.create_from_omniauth(auth_hash)
     if @user
        session[:user_id] = @user.id
-       redirect_to user_path(current_user)
+       redirect_to root_path
     else
       redirect_to root_url
     end
