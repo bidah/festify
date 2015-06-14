@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  get 'user/index'
+
+  get 'user/show'
+
+  get 'sessions/new'
+
+  get 'sessions/create'
+
+  get 'sessions/destroy'
+
   root             'test#index'
   get 'about'   => 'test#about'
   get 'contact' => 'test#contact'
@@ -10,6 +20,11 @@ Rails.application.routes.draw do
   devise_for :admins
 
   get 'home/index'
+
+  get '/login' => 'sessions#new'
+  get '/auth/spotify/callback' => 'sessions#create'
+  get '/logout' => 'sessions#destroy'
+  
   #get 'home#index'
 
   # Example of regular route:
