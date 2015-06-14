@@ -1,7 +1,7 @@
 class AdminController < ApplicationController
   def index
     console
-    @my_events = Event.where(admin_id: session[:user_id]) 
+    @my_events = Event.where(admin_id: current_admin.id) 
   end
 
   def new
