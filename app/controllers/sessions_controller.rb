@@ -22,9 +22,9 @@ class SessionsController < ApplicationController
     session[:artists] = @user_artists
     if @user
        session[:user_id] = @user.id
-       return redirect_to root_path
+       return redirect_to sessions_path
     else
-      return redirect_to root_url
+      return redirect_to sessions_path
     end
   end
 
@@ -36,7 +36,7 @@ class SessionsController < ApplicationController
     @events_artists = Event.all
     @events_to_go = []
     @events_artists.each do |event|
-      @artists_from_events_that_match_user_fav_artists = @user_artists.select! do |user_artist|
+      @artists_from_events_that_match_user_fav_artists = @user_artists.select do |user_artist|
         if event.artists.split(',').map(&:lstrip).include? user_artist
           @events_to_go << event
         end

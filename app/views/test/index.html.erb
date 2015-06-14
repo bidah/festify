@@ -1,10 +1,16 @@
-<div	class="center">
-		<%=	link_to	image_tag("logo_fondo_transparente_con_blanco.png",	alt: "Festify logo"), root_path	%>
-		<h1>¡Encuentra los mejores conciertos en el país!</h1>
-		<br>
-		<div class = "center">
+<style>
 
+</style>
 
+<div class="row collage" style="background: url(http://musicmaniamusic.weebly.com/uploads/1/2/3/3/12337895/3120281_orig.jpg) no-repeat center center; background-size: cover; height:300px">
+
+</div>
+<div class="row">
+<div class="col-md-12">
+  <div  class="center">
+    <h2>Encuentra los mejores conciertos en el país según tus gustos de musica.</h2>
+    <br>
+    <div class = "center">
 
     <% if logged_in? %>
       <%#= link_to current_user.name, home_index_path %>
@@ -13,9 +19,11 @@
       <%= link_to "¡Loggea con Spotify!", login_path, class:  "btn btn-lg btn-warning strokeme"  %>
       <%= link_to "¡Promociona un evento!", home_index_path,  class:  "btn btn-lg btn-success strokeme" %>
     <% end %>
-		</div>
+    </div>
 </div>
 
+</div>
+</div>
 <!--
 <%=	link_to	image_tag("rails.png",	alt: "Rails logo"), 'http://rubyonrails.org/'	%>
 -->
