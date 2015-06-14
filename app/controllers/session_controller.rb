@@ -1,4 +1,4 @@
-class SessionsController < ApplicationController
+class SessionController < ApplicationController
   helper_method def logged_in?
     !!current_user #double negation to convert to boolean
   end
@@ -11,10 +11,10 @@ class SessionsController < ApplicationController
     redirect_to '/auth/spotify'
   end
   def create
-    @user = User.find_by_provider_and_uid(auth_hash[:provider], auth_hash[:uid]) || RSpotify::User.create_from_omniauth(auth_hash)
+    @user = User.find_by_provider_and_uid(auth_hash[:provider], auth_hash[:uid]) || User.create_from_omniauth(auth_hash)
     if @user
        session[:user_id] = @user.id
-       redirect_to root_path
+       redirect_to user_path(current_user)
     else
       redirect_to root_url
     end
@@ -27,6 +27,8 @@ class SessionsController < ApplicationController
 
   protected
   def auth_hash
+
+    print request.env['omniauth.auth']
     request.env['omniauth.auth']
   end
 end
