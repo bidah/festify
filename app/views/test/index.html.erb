@@ -4,7 +4,13 @@
 				Ejemplo de texto.
 		</h2>
 		<div class = "center">
-		<%=	link_to	"¡Loggea con Spotify!",	"#",	class:	"btn btn-lg btn-warning"	%>
+    <% console %>
+      <% if logged_in? %>
+        <%#= link_to current_user.name, user_path(current_user), class:  "btn btn-lg btn-warning" %>
+        <%= link_to 'Log Out', logout_path %>
+      <% else %>
+        <%= link_to '¡Login con Spotify!', login_path,  class:  "btn btn-lg btn-warning" %>
+      <% end %>
 		</div>
 <!--</div>-->
 

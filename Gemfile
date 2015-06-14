@@ -18,7 +18,6 @@ gem 'devise'
 
 gem 'friendly_id', '~> 5.1.0'
 
-
 gem 'omniauth'
 gem 'omniauth-spotify'
 gem 'figaro'
