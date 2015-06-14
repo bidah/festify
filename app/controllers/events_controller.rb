@@ -21,6 +21,10 @@ class EventsController < ApplicationController
   
   end
 
+  def all 
+    @event =Event.find(:all)
+  end
+
   def edit
   end
 

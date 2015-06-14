@@ -20,6 +20,7 @@ class SessionsController < ApplicationController
     @user_artists = @spotify_user.saved_tracks.collect {|song| song.artists[0].name } 
     # session['user_artist'] = @user_artist.to_json
     session[:artists] = @user_artists
+
     if @user
        session[:user_id] = @user.id
        return redirect_to sessions_path
@@ -33,6 +34,7 @@ class SessionsController < ApplicationController
     @events = Event.all
     @user_artists = session[:artists]
     # puts JSON.parse()session['user_artist']@user_artists
+    
     @events_artists = Event.all
     @events_to_go = []
     @events_artists.each do |event|
@@ -42,6 +44,8 @@ class SessionsController < ApplicationController
         end
       end
     end
+
+    render :template => 'test/index'
   end
 
   def destroy

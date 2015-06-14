@@ -6,6 +6,10 @@ class TestController < ApplicationController
   helper_method def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id] #memoized
   end
+
+  helper_method def get_event
+      @event =Event.all
+  end 
   def index
   end
 
