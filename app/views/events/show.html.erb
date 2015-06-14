@@ -1,19 +1,18 @@
 
 
-<div class="container">
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="jumbotron">
+      <h1><%= @event.name %></h1>
+      <p><%=  @event.description %></p>
+    </div>
+  </div>
+</div>
+
 <div class="col-md-4">
-<div class="jumbotron">
-  <h1><%= @event.name %></h1>
-  <p><%=  @event.description %></p>
-  <p><a class="btn btn-primary btn-lg" href="#" role="button">Detalles</a></p>
 </div>
-<p></p>
 
-<span><%= link_to 'Compra tus entradas', @event.ticket_link %></span>
-
-<p>Artistas: 
-</p>
-</div>
 <div class="col-md-4">
   <br>
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -43,39 +42,34 @@
       <span class="sr-only">Next</span>
     </a>
   </div>
-  </div>
-  <div class="col-md-4">
-  	<div role="tabpanel">
-
-  <!-- Nav tabs -->
-  <ul class="nav nav-tabs" role="tablist">
-    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Evento</a></li>
-    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Artistas</a></li>
-    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Entradas</a></li>
-  </ul>
-
-  <!-- Tab panes -->
-  <div class="tab-content">
-    <div role="tabpanel" class="tab-pane active" id="home">
-    	<%=  @event.description %>
-    </div>
-    <div role="tabpanel" class="tab-pane" id="profile">Lista de los artistas</div>
-    <div role="tabpanel" class="tab-pane" id="messages">
-    	<ul class="list-group">
-    <li class="list-group-item">Primera fila <span class="badge">$75</span></li>
-    <li class="list-group-item">Segunda fila <span class="badge">$75</span></li>        
-    <li class="list-group-item">Platea baja <span class="badge">$75</span></li>
-    <li class="list-group-item">tribuna <span class="badge">$75</span></li>
-</ul>
-     
-    </div>
-    
-    
-  </div>
-
 </div>
 
+<div class="col-md-4">
+  <div role="tabpanel">
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs" role="tablist">
+      <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Evento</a></li>
+      <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Artistas</a></li>
+      <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Entradas</a></li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+      <div role="tabpanel" class="tab-pane active" id="home">
+      	<%=  @event.description %>
+      </div>
+      <div role="tabpanel" class="tab-pane" id="profile">Lista de los artistas</div>
+      <div role="tabpanel" class="tab-pane" id="messages">
+      	<ul class="list-group">
+          <li class="list-group-item"><%= link_to 'Comprar Primera Fila', @event.ticket_link %> <span class="badge">$75</span></li>
+          <li class="list-group-item"><%= link_to 'Comprar Segunda Fila', @event.ticket_link %> <span class="badge">$75</span></li>        
+          <li class="list-group-item"><%= link_to 'Compra Platea Baja', @event.ticket_link %><span class="badge">$75</span></li>
+          <li class="list-group-item"><%= link_to 'Comprar Tribuna', @event.ticket_link %><span class="badge">$75</span></li>
+        </ul>
+      </div>
+    </div>
   </div>
+</div>
 </div>
 
 
