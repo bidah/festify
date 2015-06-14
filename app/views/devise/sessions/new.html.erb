@@ -8,7 +8,6 @@ body {
     height:100px;
     font-family: 'Raleway', sans-serif;
 }
-
 p {
   color:#CCC;
 }
@@ -23,7 +22,6 @@ p {
   width: 680px;
   height: 500px;
 }
-
 .logo {
   color:#CCC;
 }
@@ -33,48 +31,40 @@ p {
 </style>
 
 <div class="middlePage col-md-5 col-md-offset-3">
-<!--div class="page-header">
-  <h1 class="logo">Techulus <small>Welcome to our place!</small></h1>
-</div-->
 
-<div class="panel panel-info">
-  <div class="panel-heading">
-    <h3 class="panel-title strokeme">Loggea con tu usuario de Spotify</h3>
-  </div>
+  <div class="panel panel-success">
+    <div class="panel-heading">
+      <h3 class="panel-title strokeme">Loggea con tu usuario de Spotify</h3>
+    </div>
   <div class="panel-body">
   
   <div class="row">
   
-<div class="col-md-5 nlogo" >
-<%= link_to image_tag("spotify.png",  alt: "Festify logo"), '/auth/spotify' %>
-<a href="#"><img src="http://techulus.com/buttons/fb.png" /></a><br/>
-<a href="#"><img src="http://techulus.com/buttons/tw.png" /></a><br/>
-<a href="#"><img src="http://techulus.com/buttons/gplus.png" /></a>
-
-</div> 
+    <div class="col-md-5 nlogo" >
+      <%= link_to image_tag("spotify.png",  alt: "Festify logo"), '/auth/spotify' %>
+      <a href="#"><img src="http://techulus.com/buttons/fb.png" /></a><br/>
+      <a href="#"><img src="http://techulus.com/buttons/tw.png" /></a><br/>
+      <a href="#"><img src="http://techulus.com/buttons/gplus.png" /></a>
+    </div> 
 
     <div class="col-md-7" style="border-left:1px solid #ccc;height:160px">
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-<fieldset>
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <fieldset>
+        <%= f.email_field :email, autofocus: true, :class => 'form-control input-md' %>
+        <%= f.password_field :password, autocomplete: "off",  :class => 'form-control input-md' %>
+        <% if devise_mapping.rememberable? -%>
+        <div class="spacing">
+          <%= f.check_box :remember_me %>
+          <%= f.label :remember_me %>
+        </div>
+        <% end -%>
 
-
-  
-    <%= f.email_field :email, autofocus: true, :class => 'form-control input-md' %>
-    <%= f.password_field :password, autocomplete: "off",  :class => 'form-control input-md' %>
-  <% if devise_mapping.rememberable? -%>
-    <div class="spacing">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-    </div>
-  <% end -%>
-
-  <div class="actions">
-     <a type="buttom" class="btn btn-success"  href="/admins/sign_up">Sign Up </a>
-    <%= f.submit "Log in", :class => 'btn btn-info btn-sm pull-right' %>
-  </div>
-<% end %>
-
-</fieldset>
+        <div class="actions">
+          <a type="buttom" class="btn btn-success"  href="/admins/sign_up">Sign Up </a>
+          <%= f.submit "Log in", :class => 'btn btn-info btn-sm pull-right' %>
+        </div>
+        <% end %>
+      </fieldset>
 </form>
 </div>
     
